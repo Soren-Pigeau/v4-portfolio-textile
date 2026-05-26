@@ -59,11 +59,12 @@
 
 /* --- CV : ALIGNEMENT STRICT (COMME LE PDF) --- */
 .cvContainer {
-  max-width: 780px; /* Aligne le contenu du CV proprement au milieu */
+  width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem; /* Espacement entre les rubriques */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Sépare le CV en deux colonnes */
+  gap: 3rem 4rem; /* 3rem d'espace vertical, 4rem d'espace horizontal */
 }
 
 .cvSection {
@@ -118,6 +119,8 @@
   color: var(--color-text);
 }
 
+
+
 @media (max-width: 768px) {
   .page { padding: 6rem 1.5rem; }
   .infos { grid-template-columns: 1fr; gap: 2rem; }
@@ -126,5 +129,11 @@
   .cvItem { 
     grid-template-columns: 60px 1fr; 
     gap: 0.8rem;
+  }
+
+  /* Et on remet le CV sur une seule colonne */
+  .cvContainer {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 }

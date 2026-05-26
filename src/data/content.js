@@ -99,34 +99,110 @@ export const sections = {
 //   detail → le complément (affiché en gris clair : mention, institution, ville…)
 export const cv = {
   bourses: [
-    { year: '2026', lead: 'Homo Faber Fellowship — Fondation Michelangelo', detail: "Avec l'atelier Mérigot Sanzay, Venise — Paris." },
+    {
+      year: "2026",
+      lead: "Homo Faber Fellowship - Fondation Michelangelo",
+      detail: "Avec l'atelier Mérigot Sanzay. Venise - Paris."
+    }
   ],
   expos: [
-    { year: '2024', lead: 'Eurofabrique', detail: 'Restitution à Cluj-Napoca et à la Gaité Lyrique, Paris.' },
-    { year: '2023', lead: 'Lignes de Vie', detail: 'cur. Mayfly Gallery, Bastille Design Center, Paris.' },
-    { year: '2022', lead: 'Désert Samples', detail: 'Galerie Octave Cowbell, Metz.' },
+    {
+      year: "2024",
+      lead: "Eurofabrique",
+      detail: "Restitution à Cluj-Napoca et à la Gaité Lyrique. Paris."
+    },
+    {
+      year: "2023",
+      lead: "Lignes de Vie",
+      detail: "cur. Mayfly Callery, Bastille Design Center, Paris."
+    },
+    {
+      year: "2022",
+      lead: "Désert Samples",
+      detail: "Galerie Octave Cowbell, Metz."
+    }
   ],
   freelance: [
-    { year: '2026', lead: 'Tisserande — Diane Collongues', detail: 'Atelier Mérigot Sanzay, Paris.' },
-    { year: '2026', lead: 'Tisserande — Marie Hazard', detail: 'Project Ad Hoc, Paris.' },
-    { year: '2024-2025', lead: 'Chargée de communication — Carel Paris', detail: 'Paris.' },
-    { year: '2023', lead: 'Assistante éditoriale — Revue Revive', detail: 'Studio Anémone Image, artistes Amir Tikriti et Célia Cotelle, Paris.' },
-    { year: '2022', lead: 'Tirage argentique — Studio Pauléon', detail: 'La Rochelle.' },
+    {
+      year: "2026",
+      lead: "Tisserande",
+      detail: "Diane Collongues, atelier Mérigot Sanzay, Paris."
+    },
+    {
+      year: "2026",
+      lead: "Tisserande",
+      detail: "Marie Hazard, project Ad Hoc, Paris."
+    },
+    {
+      year: "2024-2025",
+      lead: "Chargée de communication",
+      detail: "Carel Paris, Paris."
+    },
+    {
+      year: "2023",
+      lead: "Assistante éditoriale",
+      detail: "Revue Revive, studio Anémone Image, artistes Amir Tikriti et Célia Cotelle, Paris."
+    },
+    {
+      year: "2022",
+      lead: "Tirage argentique",
+      detail: "Studio Pauléon, La Rochelle."
+    }
   ],
   workshop: [
-    { year: '2025', lead: 'Technique modélisme — Patrice Dutartre et Catarina Knoch-mulot', detail: 'Paris.' },
-    { year: '2023', lead: 'Vidéo — Lou Fauroux', detail: 'Mulhouse.' },
-    { year: '2022', lead: 'Désert Samples — Marie Quéau', detail: 'Mulhouse.' },
+    {
+      year: "2025",
+      lead: "Technique modélisme",
+      detail: "Patrice Dutartre et Catarina Knoch-mulot, Paris."
+    },
+    {
+      year: "2023",
+      lead: "Vidéo - Lou Fauroux",
+      detail: "Mulhouse."
+    },
+    {
+      year: "2022",
+      lead: "Désert Samples - Marie Quéau",
+      detail: "Mulhouse."
+    }
   ],
   formations: [
-    { year: '2026', lead: 'Mastère Spécialisé Management de la Mode et du Luxe', detail: 'Avec mention — Institut Français de la Mode, Paris.' },
-    { year: '2024', lead: 'DNSEP option Design Textile', detail: 'Avec mention — Haute École des Arts du Rhin, Mulhouse.' },
-    { year: '2022', lead: 'DNA option Design Textile', detail: 'Avec les félicitations du jury — Haute École des Arts du Rhin, Mulhouse.' },
-    { year: '2020', lead: 'CPGE Arts et Design', detail: 'Avec mention, Toulouse.' },
+    {
+      year: "2026",
+      lead: "Mastère Spécialisé Management de la Mode et du Luxe",
+      detail: "avec mention - Institut Français de la Mode, Paris."
+    },
+    {
+      year: "2024",
+      lead: "DNSEP option Design Textile",
+      detail: "avec mention - Haute École des Arts du Rhin, Mulhouse."
+    },
+    {
+      year: "2022",
+      lead: "DNA option Design Textile",
+      detail: "avec les félicitations du jury - Haute École des Arts du Rhin, Mulhouse."
+    },
+    {
+      year: "2020",
+      lead: "CPGE Arts et Design",
+      detail: "avec mention, Toulouse."
+    }
   ],
   evenements: [
-    { year: '2024', lead: 'Performance Fleur en Strass', detail: "Vernissage de l'exposition Ministère de l'impression à la Filature Scène Nationale, Mulhouse." },
-    { year: '2023', lead: 'Performance Fleur en Strass', detail: 'Série de 3 soirées de performances au Doc (19ème), Paris.' },
-    { year: '2023', lead: 'VJ pour le Festival Elektric Park', detail: 'Chatou.' },
-  ],
+    {
+      year: "2024",
+      lead: "Performance Fleur en Strass",
+      detail: "Vernissage de l'exposition Ministère de l'impression à la Filature Scène Nationale. Mulhouse."
+    },
+    {
+      year: "2023",
+      lead: "Performance Fleur en Strass",
+      detail: "série de 3 soirées de performances au Doc (19ème), Paris."
+    },
+    {
+      year: "2023",
+      lead: "VJ pour le Festival Elektric Park",
+      detail: "Chatou."
+    }
+  ]
 };
