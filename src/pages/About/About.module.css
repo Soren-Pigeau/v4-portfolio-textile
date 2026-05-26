@@ -30,7 +30,7 @@
   align-items: start;
 }
 .contact { display: flex; flex-direction: column; gap: 0.7rem; font-size: 0.9rem; }
-.contact a, .contact span { display: inline-flex; align-items: center; gap: 0.55rem; text-decoration: none; color: inherit;}
+.contact a, .contact span { display: inline-flex; align-items: center; gap: 0.55rem; text-decoration: none; color: inherit; }
 .contact :global(.ico) { flex-shrink: 0; opacity: 0.85; }
 .contact a:hover :global(.ico) { opacity: 1; }
 .contact a { transition: opacity 0.2s ease; }
@@ -38,74 +38,88 @@
 .bio p { margin-bottom: 0.9rem; font-size: 0.98rem; line-height: 1.65; }
 .portrait { margin-top: 1.5rem; width: 100%; max-width: 320px; }
 
-/* --- ONGLET DÉMARCHE (Image) --- */
-.demarcheContainer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+/* --- STYLE DESIGN TEXTE DÉMARCHE --- */
+.demarcheText {
+  max-width: 620px; /* Même largeur parfaite que la bio pour garder l'harmonie */
+  margin: 0 auto;
+  padding-top: 1rem;
 }
-.demarcheImage {
-  width: 100%;
-  max-width: 800px; /* Ajustez la taille selon vos préférences */
-  height: auto;
-  display: block;
-  margin: 1rem auto 3rem auto; 
-  object-fit: contain;
+.demarcheText p {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin-bottom: 1.8rem;
+  color: var(--color-text);
+  text-align: left;
 }
 
-/* --- ONGLET CV (Fidèle au PDF) --- */
+/* --- STYLE DESIGN CV ÉPURÉ (Idem PDF) --- */
 .cvContainer {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Met le CV sur 2 colonnes. Remplacez par "1fr" pour 1 seule colonne */
-  gap: 3rem;
-  align-items: start;
+  max-width: 720px; /* Largeur de lecture idéale */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem; /* Espace aéré entre les rubriques */
 }
-.cvSection { 
-  margin-bottom: 1rem; 
+
+.cvSection {
+  display: flex;
+  flex-direction: column;
 }
+
 .cvSectionTitle {
-  font-size: 0.85rem;
-  font-weight: bold;
-  letter-spacing: 0.12em;
-  margin-bottom: 1.2rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+  opacity: 0.9;
 }
+
 .cvList {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 0.85rem;
 }
-.cvList li {
-  margin-bottom: 1rem;
-  line-height: 1.5;
+
+.cvItem {
   display: flex;
-  align-items: flex-start; /* Aligne la date et le texte vers le haut */
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
 }
 
-/* La date reste à gauche, avec une largeur fixe pour que tout soit aligné */
-.cvDate {
+/* Fixe la colonne des dates à gauche */
+.cvYear {
+  width: 90px;
   flex-shrink: 0;
-  width: 65px; 
   font-weight: normal;
-  margin-right: 0.5rem;
+  color: var(--color-text);
 }
 
-/* Le rôle principal (en gras dans le JSX) */
-.cvList strong {
+.cvItemContent {
+  flex-grow: 1;
+}
+
+/* Intitulé principal bien en gras */
+.cvLead {
   font-weight: 700;
+  color: var(--color-text);
 }
 
-/* Les détails (villes, institutions...) */
+/* Le détail passe proprement à la ligne en dessous */
 .cvDetail {
-  font-weight: 400;
-  color: var(--color-text); /* Ou mettez var(--color-muted) si vous les voulez grisés */
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--color-text);
+  opacity: 0.85;
 }
 
-/* --- RESPONSIVE MOBILE --- */
+/* Responsive mobile */
 @media (max-width: 768px) {
   .page { padding: 6rem 1.5rem; }
   .infos { grid-template-columns: 1fr; gap: 2rem; }
-  /* Sur mobile, le CV passe sur 1 seule colonne */
-  .cvContainer { grid-template-columns: 1fr; gap: 2rem; }
+  .cvItem { flex-direction: column; gap: 0.25rem; }
+  .cvYear { width: auto; font-weight: 600; }
 }

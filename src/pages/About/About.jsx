@@ -1,15 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Layout from '../../components/Layout/Layout';
-// Import de l'image (assurez-vous qu'elle est bien placée dans src/assets/)
-import fondDemarche from '../../assets/fond-demarche.jpg';
 import PdfPages from '../../components/PdfPages/PdfPages';
 import { useLanguage } from '../../i18n/LanguageContext';
 import { cv, aboutPortrait } from '../../data/content';
 import styles from './About.module.css';
 
-// ── Réglage : le CV s'affiche en PDF intégré (true) OU en texte bilingue (false)
-//    Mets false si tu préfères garder la version typographiée FR/EN (dans content.js).
 const CV_AS_PDF = false;
 
 export default function About() {
@@ -20,7 +16,7 @@ export default function About() {
   return (
     <Layout>
       <div className={styles.page}>
-        {/* Sous-navigation, alignée à droite (cf. maquette) */}
+        {/* Sous-navigation */}
         <nav className={styles.tabs}>
           {['infos', 'portfolio', 'cv'].map((key) => (
             <button
@@ -49,7 +45,6 @@ export default function About() {
               </div>
               <div className={styles.bio}>
                 {a.bio.split('\n').map((line, i) => <p key={i}>{line}</p>)}
-                {/* Portrait — Cyrielle était indécise dessus : à retirer si besoin */}
                 {aboutPortrait && (
                   <img src={aboutPortrait} alt="Cyrielle Pigeau" className={styles.portrait} />
                 )}
@@ -57,14 +52,16 @@ export default function About() {
             </div>
           )}
 
-          {/* ONGLET DÉMARCHE (anciennement Portfolio) : Affichage de l'image */}
+          {/* DÉMARCHE : Affichage de texte épuré */}
           {tab === 'portfolio' && (
-            <div className={styles.demarcheContainer}>
-              <img src={fondDemarche} alt="Démarche" className={styles.demarcheImage} />
+            <div className={styles.demarcheText}>
+              {a.demarche.split('\n\n').map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
             </div>
           )}
 
-          {/* ONGLET CV : Structure hiérarchisée et en gras */}
+          {/* CV : Une seule colonne fluide fidèle au PDF */}
           {tab === 'cv' && (
             CV_AS_PDF ? (
               <PdfPages doc="cv" downloadLabel={a.cvDownload} />
@@ -85,7 +82,6 @@ export default function About() {
   );
 }
 
-// ── Composant CV modifié pour coller au design exact du PDF
 function CvBlock({ title, items }) {
   if (!items || items.length === 0) return null;
   return (
@@ -93,10 +89,12 @@ function CvBlock({ title, items }) {
       <h3 className={styles.cvSectionTitle}>{title}</h3>
       <ul className={styles.cvList}>
         {items.map((it, i) => (
-          <li key={i}>
-            <span className={styles.cvDate}>{it.year}</span>{' '}
-            <strong>{it.lead}</strong>
-            {it.detail && <span className={styles.cvDetail}> – {it.detail}</span>}
+          <li key={i} className={styles.cvItem}>
+            <span className={styles.cvYear}>{it.year}</span>
+            <div className={styles.cvItemContent}>
+              <strong className={styles.cvLead}>{it.lead}</strong>
+              {it.detail && <span className={styles.cvDetail}>{it.detail}</span>}
+            </div>
           </li>
         ))}
       </ul>
@@ -104,7 +102,7 @@ function CvBlock({ title, items }) {
   );
 }
 
-/* ── Petites icônes (SVG inline, sans dépendance) ── */
+/* ── Icônes SVG ── */
 function MailIcon() {
   return (
     <svg className="ico" width="15" height="15" viewBox="0 0 24 24" fill="none"
