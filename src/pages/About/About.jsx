@@ -10,13 +10,12 @@ const CV_AS_PDF = false;
 
 export default function About() {
   const { t } = useLanguage();
-  const [tab, setTab] = useState('infos'); // 'infos' | 'portfolio' | 'cv'
+  const [tab, setTab] = useState('infos');
   const a = t.about;
 
   return (
     <Layout>
       <div className={styles.page}>
-        {/* Sous-navigation */}
         <nav className={styles.tabs}>
           {['infos', 'portfolio', 'cv'].map((key) => (
             <button
@@ -52,16 +51,18 @@ export default function About() {
             </div>
           )}
 
-          {/* DÉMARCHE : Affichage de texte épuré */}
+          {/* DÉMARCHE : Rendu textuel épuré */}
           {tab === 'portfolio' && (
             <div className={styles.demarcheText}>
               {a.demarche.split('\n\n').map((paragraph, i) => (
-                <p key={i}>{paragraph}</p>
+                <p key={i} className={i === 0 ? styles.demarcheTitle : ''}>
+                  {paragraph}
+                </p>
               ))}
             </div>
           )}
 
-          {/* CV : Une seule colonne fluide fidèle au PDF */}
+          {/* CV : Grille stricte et fidèle au PDF */}
           {tab === 'cv' && (
             CV_AS_PDF ? (
               <PdfPages doc="cv" downloadLabel={a.cvDownload} />
@@ -82,6 +83,7 @@ export default function About() {
   );
 }
 
+// ── Composant CV modifié pour l'alignement exact ──
 function CvBlock({ title, items }) {
   if (!items || items.length === 0) return null;
   return (
@@ -92,8 +94,8 @@ function CvBlock({ title, items }) {
           <li key={i} className={styles.cvItem}>
             <span className={styles.cvYear}>{it.year}</span>
             <div className={styles.cvItemContent}>
-              <strong className={styles.cvLead}>{it.lead}</strong>
-              {it.detail && <span className={styles.cvDetail}>{it.detail}</span>}
+              <span className={styles.cvLead}>{it.lead}</span>
+              {it.detail && <span className={styles.cvDetail}> – {it.detail}</span>}
             </div>
           </li>
         ))}
@@ -102,7 +104,7 @@ function CvBlock({ title, items }) {
   );
 }
 
-/* ── Icônes SVG ── */
+/* ── Icônes ── */
 function MailIcon() {
   return (
     <svg className="ico" width="15" height="15" viewBox="0 0 24 24" fill="none"

@@ -1,9 +1,5 @@
 // =============================================================
 //  TOUS LES TEXTES DU SITE — Français + Anglais
-//  Cahier des charges : "Il faudra aussi proposer une version
-//  en Anglais" sur CHAQUE page. Tout passe donc par ce fichier.
-//  Pour modifier un texte : tu le changes ici, jamais en dur
-//  dans les composants.
 // =============================================================
 
 export const translations = {
@@ -33,14 +29,17 @@ export const translations = {
       portfolioCta: 'Télécharger le portfolio',
       cvDownload: 'Télécharger le CV',
       bio: "Née à la Rochelle en 2000.\nCyrielle Pigeau vit et travaille à Paris. Elle est diplômée en 2024 du DNSEP Design Textile à la HEAR et du Mastère Spécialisé à l'Institut Français de la Mode. Sa pratique mêle photographie et techniques textiles artisanales (tissage, tapisserie d'ameublement et de haute lice). Son travail a été montré lors d'expositions collectives à la Galerie Octave Cowbell à Metz (2022), au Bastille Design Center (2023). Également artiste VJ, elle co-fonde en 2023 le collectif Fleur en Strass avec lequel elle organise des évènements au DOC (Paris 19) ; à la Filature Scène Nationale (Mulhouse) et au sein de la HEAR (Mulhouse). Dans la poursuite de sa pratique artisanale, elle intègre en septembre 2026 la 4ème édition du programme Homo Faber Fellowship au sein de l'atelier Mérigot Sanzay (Diane Collongues).",
-      demarche: "À travers une démarche croisant la photographie et les savoir-faire textiles (tissage, tapisserie d’ameublement et de haute lice), Cyrielle Pigeau explore les tensions entre l’image plane et le volume, le mécanique et le manuel, le visible et le tactile. Ses recherches s’articulent autour de l’apprentissage et de la transmission de gestes séculaires pour en interroger la charge technique et symbolique.\n\nLa photographie, souvent abordée par le prisme de l’argentique, sert de point de départ à une déconstruction : l’image n’est plus seulement une surface à regarder, elle devient une matière à manipuler, à effilocher, à entrelacer. Le passage au métier à tisser ou le travail de rembourrage introduisent une temporalité lente, propice à l’émergence de récits intimes et collectifs liés à l’héritage culturel et à l’empreinte des corps. Chaque pièce, hybride et tactile, tente de suspendre le temps en matérialisant des lignes de vie, des fragments de paysages ou des mémoires d’ateliers.",
+      
+      // Texte intégral de la démarche séparé par des sauts de ligne pour créer des paragraphes
+      demarche: "DÉMARCHE ARTISTIQUE\n\nMon travail mêle photographie et savoir-faire textiles (tissage, tapisserie d'ameublement et de haute lice). Je m'appuie sur l'apprentissage et la transmission pour interroger les dimensions techniques et symboliques de ces pratiques en lien avec mon propre héritage culturel.\n\nIssue d'une famille d'artisan.es (tapissièr.es d'ameublement et de décors, modéliste), les métiers d'arts sont à l'origine de mes projets. Je m'appuie sur des archives familiales et une démarche documentaire pour appréhender un héritage dont j'ai longtemps été tenue à l'écart. La photographie me permet de poser mon regard sur un moment, un lieu et un apprentissage. Mon protocole débute par une phase de collecte : vidéos, enregistrements sonores, dessins, motifs, archives, documents, mais aussi des conversations. J'édite ces éléments par des techniques de superposition, d'assemblage et d'accumulation. À partir de cette enquête, je mobilise des procédés d'impression et savoir-faire textiles pour tapisser des fauteuils, produire des tissages et concevoir des installations. À travers mes productions, je cherche à créer des récits parallèles pour me réapproprier une mémoire familiale.\n\nMes expériences professionnelles dans le secteur du luxe et en ateliers, ont rendu visibles les discours qui entourent les métiers d'art. Je souhaite m'éloigner des récits institutionnels et ouvrir de nouveaux espaces de dialogue. Dans la continuité de mon parcours, j'intègre en septembre 2026 l'atelier Mérigot Sanzay avec le programme Homo Faber Fellowship. D'une durée de 8 mois, cette résidence se concentre sur l'apprentissage de la technique de la tapisserie de Haute Lice, pour poursuivre mon engagement envers une pratique sensible aux gestes et à la transmission.",
+      
       cvSections: {
-        bourses: 'Bourses_Résidences',
-        expos: 'Expositions collectives',
-        freelance: 'Expériences_freelance',
-        workshop: 'Workshop',
-        formations: 'Formations',
-        evenements: 'Événements',
+        bourses: 'BOURSES_RÉSIDENCES',
+        expos: 'EXPOSITIONS COLLECTIVES',
+        freelance: 'EXPÉRIENCES_FREELANCE',
+        workshop: 'WORKSHOP',
+        formations: 'FORMATIONS',
+        evenements: 'ÉVÉNEMENTS',
       },
     },
 
@@ -76,14 +75,14 @@ export const translations = {
       portfolioCta: 'Download the portfolio',
       cvDownload: 'Download the CV',
       bio: "Born in La Rochelle in 2000.\nCyrielle Pigeau lives and works in Paris. In 2024 she graduated with the DNSEP in Textile Design from HEAR and the Specialised Master's from the Institut Français de la Mode. Her practice combines photography and traditional textile techniques (weaving, upholstery and high-warp tapestry). Her work has been shown in group exhibitions at Galerie Octave Cowbell in Metz (2022) and at the Bastille Design Center (2023). Also a VJ artist, in 2023 she co-founded the Fleur en Strass collective, with which she organises events at DOC (Paris 19), at La Filature Scène Nationale (Mulhouse) and within HEAR (Mulhouse). Continuing her craft practice, in September 2026 she joins the 4th edition of the Homo Faber Fellowship at the Mérigot Sanzay workshop (Diane Collongues).",
-      demarche: "Through an approach crossing photography and textile craftsmanship (weaving, upholstery and high-warp tapestry), Cyrielle Pigeau explores the tensions between the flat image and volume, the mechanical and the manual, the visible and the tactile. Her research revolves around learning and transmitting age-old gestures to question their technical and symbolic weight.\n\nPhotography, often approached through the lens of film, serves as a starting point for deconstruction: the image is no longer just a surface to look at, it becomes a material to manipulate, fray, and intertwine. The transition to the loom or upholstery work introduces a slow temporality, conducive to the emergence of intimate and collective narratives linked to cultural heritage and the imprint of bodies. Each piece, hybrid and tactile, attempts to suspend time by materializing lifelines, landscape fragments, or workshop memories.",
+      demarche: "ARTISTIC APPROACH\n\nMy work combines photography and textile craftsmanship (weaving, upholstery, and high-warp tapestry). I rely on learning and transmission to question the technical and symbolic dimensions of these practices in relation to my own cultural heritage.\n\nComing from a family of artisans (upholsterers, set decorators, pattern makers), crafts are at the origin of my projects. I use family archives and a documentary approach to understand a heritage from which I was kept away for a long time. Photography allows me to look at a moment, a place, and a learning process. My protocol begins with a collection phase: videos, sound recordings, drawings, patterns, archives, documents, but also conversations. I edit these elements through techniques of superimposition, assembly, and accumulation. From this investigation, I mobilize printing processes and textile craftsmanship to upholster armchairs, produce weaving, and design installations. Through my productions, I seek to create parallel narratives to reclaim a family memory.\n\nMy professional experiences in the luxury sector and in workshops have made visible the discourses surrounding crafts. I wish to distance myself from institutional narratives and open new spaces for dialogue. Continuing my journey, I will join the Mérigot Sanzay workshop in September 2026 with the Homo Faber Fellowship program. Lasting 8 months, this residency focuses on learning the technique of high-warp tapestry, to continue my commitment to a practice sensitive to gestures and transmission.",
       cvSections: {
-        bourses: 'Grants_Residencies',
-        expos: 'Group exhibitions',
-        freelance: 'Freelance experience',
-        workshop: 'Workshop',
-        formations: 'Education',
-        evenements: 'Events',
+        bourses: 'GRANTS_RESIDENCIES',
+        expos: 'GROUP EXHIBITIONS',
+        freelance: 'FREELANCE EXPERIENCE',
+        workshop: 'WORKSHOP',
+        formations: 'EDUCATION',
+        evenements: 'EVENTS',
       },
     },
 

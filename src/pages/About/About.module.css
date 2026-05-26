@@ -4,7 +4,6 @@
   padding: 7rem 2rem;
 }
 
-/* Sous-nav alignée à droite */
 .tabs {
   display: flex;
   justify-content: flex-end;
@@ -22,7 +21,6 @@
 .tabs button:hover { border-bottom-color: currentColor; }
 .tabs .tabActive { border-bottom-color: currentColor; }
 
-/* Infos : contact + bio, alignés en haut */
 .infos {
   display: grid;
   grid-template-columns: 1fr 1.6fr;
@@ -38,42 +36,48 @@
 .bio p { margin-bottom: 0.9rem; font-size: 0.98rem; line-height: 1.65; }
 .portrait { margin-top: 1.5rem; width: 100%; max-width: 320px; }
 
-/* --- STYLE DESIGN TEXTE DÉMARCHE --- */
+/* --- DÉMARCHE : PARAGRAPHES ÉPURÉS --- */
 .demarcheText {
-  max-width: 620px; /* Même largeur parfaite que la bio pour garder l'harmonie */
+  max-width: 680px; /* Largeur de lecture optimale */
   margin: 0 auto;
   padding-top: 1rem;
 }
 .demarcheText p {
   font-size: 0.98rem;
-  line-height: 1.75;
-  margin-bottom: 1.8rem;
+  line-height: 1.7; /* Interlignage élégant */
+  margin-bottom: 1.5rem;
   color: var(--color-text);
-  text-align: left;
+}
+/* Le titre "DÉMARCHE ARTISTIQUE" a un style spécifique */
+.demarcheText .demarcheTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
 }
 
-/* --- STYLE DESIGN CV ÉPURÉ (Idem PDF) --- */
+/* --- CV : ALIGNEMENT STRICT (COMME LE PDF) --- */
 .cvContainer {
-  max-width: 720px; /* Largeur de lecture idéale */
+  max-width: 780px; /* Aligne le contenu du CV proprement au milieu */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 3.5rem; /* Espace aéré entre les rubriques */
+  gap: 3rem; /* Espacement entre les rubriques */
 }
 
 .cvSection {
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
 
+/* Titres de rubriques (ex: BOURSES_RÉSIDENCES) */
 .cvSectionTitle {
-  font-size: 0.78rem;
+  font-size: 0.85rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.2rem;
   color: var(--color-text);
-  opacity: 0.9;
 }
 
 .cvList {
@@ -82,44 +86,45 @@
   margin: 0;
 }
 
+/* Le secret de l'alignement parfait : une grille à 2 colonnes (Date / Texte) */
 .cvItem {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 1.2rem;
-  font-size: 0.92rem;
+  display: grid;
+  grid-template-columns: 80px 1fr; /* 80px fixés pour la date, le reste pour le texte */
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
   line-height: 1.55;
+  align-items: start;
 }
 
-/* Fixe la colonne des dates à gauche */
 .cvYear {
-  width: 90px;
-  flex-shrink: 0;
   font-weight: normal;
   color: var(--color-text);
 }
 
 .cvItemContent {
-  flex-grow: 1;
+  display: inline;
 }
 
-/* Intitulé principal bien en gras */
+/* Rôle / Diplôme en gras */
 .cvLead {
   font-weight: 700;
   color: var(--color-text);
 }
 
-/* Le détail passe proprement à la ligne en dessous */
+/* Texte détaillé normal */
 .cvDetail {
-  display: block;
-  margin-top: 0.2rem;
+  font-weight: normal;
   color: var(--color-text);
-  opacity: 0.85;
 }
 
-/* Responsive mobile */
 @media (max-width: 768px) {
   .page { padding: 6rem 1.5rem; }
   .infos { grid-template-columns: 1fr; gap: 2rem; }
-  .cvItem { flex-direction: column; gap: 0.25rem; }
-  .cvYear { width: auto; font-weight: 600; }
+  
+  /* Sur mobile, on ajuste un peu l'espacement de la grille CV */
+  .cvItem { 
+    grid-template-columns: 60px 1fr; 
+    gap: 0.8rem;
+  }
 }
