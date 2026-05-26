@@ -26,7 +26,7 @@ export const translations = {
     },
 
     about: {
-      tabs: { infos: 'Infos', portfolio: 'Portfolio', cv: 'CV' },
+      tabs: { infos: 'Infos', portfolio: 'Démarche', cv: 'CV' },
       email: 'cyrielle.pigeau@gmail.com',
       instagram: '@_cyrielle_p',
       location: 'Basée à Paris',
@@ -68,7 +68,7 @@ export const translations = {
     },
 
     about: {
-      tabs: { infos: 'Infos', portfolio: 'Portfolio', cv: 'CV' },
+      tabs: { infos: 'Infos', portfolio: 'Approach', cv: 'CV' },
       email: 'cyrielle.pigeau@gmail.com',
       instagram: '@_cyrielle_p',
       location: 'Based in Paris',

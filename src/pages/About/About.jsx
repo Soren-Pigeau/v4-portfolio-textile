@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Layout from '../../components/Layout/Layout';
+// Import de l'image (assurez-vous qu'elle est bien placée dans src/assets/)
+import fondDemarche from '../../assets/fond-demarche.jpg';
 import PdfPages from '../../components/PdfPages/PdfPages';
 import { useLanguage } from '../../i18n/LanguageContext';
 import { cv, aboutPortrait } from '../../data/content';
@@ -55,18 +57,19 @@ export default function About() {
             </div>
           )}
 
+          {/* ONGLET DÉMARCHE (anciennement Portfolio) : Affichage de l'image */}
           {tab === 'portfolio' && (
-            // Pages affichées en images (propre, sans barre ni cadre).
-            // Le PDF d'origine reste dans public/portfolio.pdf pour le téléchargement.
-            <PdfPages doc="portfolio" downloadLabel={a.portfolioCta} />
+            <div className={styles.demarcheContainer}>
+              <img src={fondDemarche} alt="Démarche" className={styles.demarcheImage} />
+            </div>
           )}
 
+          {/* ONGLET CV : Structure hiérarchisée et en gras */}
           {tab === 'cv' && (
             CV_AS_PDF ? (
-              // Pages affichées en images (propre). PDF d'origine : public/cv.pdf
               <PdfPages doc="cv" downloadLabel={a.cvDownload} />
             ) : (
-              <div className={styles.cv}>
+              <div className={styles.cvContainer}>
                 <CvBlock title={a.cvSections.bourses} items={cv.bourses} />
                 <CvBlock title={a.cvSections.expos} items={cv.expos} />
                 <CvBlock title={a.cvSections.freelance} items={cv.freelance} />
@@ -82,17 +85,18 @@ export default function About() {
   );
 }
 
+// ── Composant CV modifié pour coller au design exact du PDF
 function CvBlock({ title, items }) {
+  if (!items || items.length === 0) return null;
   return (
-    <section className={styles.cvBlock}>
-      <h2 className={styles.cvTitle}>{title}</h2>
-      <ul>
+    <section className={styles.cvSection}>
+      <h3 className={styles.cvSectionTitle}>{title}</h3>
+      <ul className={styles.cvList}>
         {items.map((it, i) => (
           <li key={i}>
-            <span className={styles.cvLead}>
-              <span className={styles.cvYear}>{it.year}</span> {it.lead}
-            </span>
-            {it.detail && <span className={styles.cvDetail}>{it.detail}</span>}
+            <span className={styles.cvDate}>{it.year}</span>{' '}
+            <strong>{it.lead}</strong>
+            {it.detail && <span className={styles.cvDetail}> – {it.detail}</span>}
           </li>
         ))}
       </ul>

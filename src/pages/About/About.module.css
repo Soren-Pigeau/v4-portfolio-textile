@@ -17,6 +17,7 @@
 .tabs button {
   background: none; border: none; color: inherit;
   padding-bottom: 3px; border-bottom: 1px solid transparent;
+  cursor: pointer;
 }
 .tabs button:hover { border-bottom-color: currentColor; }
 .tabs .tabActive { border-bottom-color: currentColor; }
@@ -29,7 +30,7 @@
   align-items: start;
 }
 .contact { display: flex; flex-direction: column; gap: 0.7rem; font-size: 0.9rem; }
-.contact a, .contact span { display: inline-flex; align-items: center; gap: 0.55rem; }
+.contact a, .contact span { display: inline-flex; align-items: center; gap: 0.55rem; text-decoration: none; color: inherit;}
 .contact :global(.ico) { flex-shrink: 0; opacity: 0.85; }
 .contact a:hover :global(.ico) { opacity: 1; }
 .contact a { transition: opacity 0.2s ease; }
@@ -37,38 +38,74 @@
 .bio p { margin-bottom: 0.9rem; font-size: 0.98rem; line-height: 1.65; }
 .portrait { margin-top: 1.5rem; width: 100%; max-width: 320px; }
 
-/* Portfolio */
-.portfolio { padding-top: 1rem; }
-.download {
-  font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em;
-  border: 1px solid currentColor; padding: 0.9rem 2rem;
-  transition: background 0.3s ease, color 0.3s ease;
+/* --- ONGLET DÉMARCHE (Image) --- */
+.demarcheContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-.download:hover { background: var(--color-text); color: var(--color-bg); }
+.demarcheImage {
+  width: 100%;
+  max-width: 800px; /* Ajustez la taille selon vos préférences */
+  height: auto;
+  display: block;
+  margin: 1rem auto 3rem auto; 
+  object-fit: contain;
+}
 
-/* CV : grille de rubriques, alignées en haut */
-.cv {
+/* --- ONGLET CV (Fidèle au PDF) --- */
+.cvContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem 3rem;
+  grid-template-columns: repeat(2, 1fr); /* Met le CV sur 2 colonnes. Remplacez par "1fr" pour 1 seule colonne */
+  gap: 3rem;
   align-items: start;
 }
-.cvBlock { font-size: 0.82rem; line-height: 1.55; }
-.cvTitle {
-  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em;
-  margin-bottom: 0.9rem; font-weight: 500;
+.cvSection { 
+  margin-bottom: 1rem; 
 }
-.cvBlock ul { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
-.cvBlock li { color: var(--color-text); display: flex; flex-direction: column; gap: 0.15rem; }
+.cvSectionTitle {
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+}
+.cvList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.85rem;
+}
+.cvList li {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start; /* Aligne la date et le texte vers le haut */
+}
 
-/* Intitulé principal (année + titre) en gras → hiérarchie visuelle */
-.cvLead { font-weight: 700; }
-.cvYear { margin-right: 0.15em; }
-/* Complément (mention, institution, ville…) plus léger et grisé */
-.cvDetail { color: var(--color-muted); font-weight: 400; }
+/* La date reste à gauche, avec une largeur fixe pour que tout soit aligné */
+.cvDate {
+  flex-shrink: 0;
+  width: 65px; 
+  font-weight: normal;
+  margin-right: 0.5rem;
+}
 
+/* Le rôle principal (en gras dans le JSX) */
+.cvList strong {
+  font-weight: 700;
+}
+
+/* Les détails (villes, institutions...) */
+.cvDetail {
+  font-weight: 400;
+  color: var(--color-text); /* Ou mettez var(--color-muted) si vous les voulez grisés */
+}
+
+/* --- RESPONSIVE MOBILE --- */
 @media (max-width: 768px) {
   .page { padding: 6rem 1.5rem; }
   .infos { grid-template-columns: 1fr; gap: 2rem; }
-  .cv { grid-template-columns: 1fr; gap: 2rem; }
+  /* Sur mobile, le CV passe sur 1 seule colonne */
+  .cvContainer { grid-template-columns: 1fr; gap: 2rem; }
 }
